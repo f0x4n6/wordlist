@@ -1,4 +1,4 @@
-// Package wordlist contains only its deflate method.
+// Package wordlist contains only the deflate function.
 package wordlist
 
 import (
@@ -13,7 +13,7 @@ import (
 //go:embed wordlist.txt.xz
 var wordlist []byte
 
-// Deflate returns the uncompressed embed wordlist.
+// Deflate returns the uncompressed embedded wordlist.
 func Deflate() ([]byte, error) {
 	r, err := xz.NewReader(bytes.NewReader(wordlist))
 
